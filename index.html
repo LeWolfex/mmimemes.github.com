@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MM(I)emes</title>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+    <header class="header">
+        <a href="./index.html" ><img src="./images/logo.png" alt="logo"></a>
+        <button class="burger-menu" aria-label="Menu">
+            <span class="burger-bar"></span>
+            <span class="burger-bar"></span>
+            <span class="burger-bar"></span>
+        
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a href="./pages/about.html" class="nav-link">À propos</a></li>
+                <li><a href="./pages/meme.html" class="nav-link">Les memes</a></li>
+                <li><a href="./pages/authors.html" class="nav-link">Les auteurs</a></li>
+            </ul>
+        </nav>
+    </button>
+        <div class="overlay"></div>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a href="./pages/about.html" class="nav-link">À propos</a></li>
+                <li><a href="./pages/meme.html" class="nav-link">Les memes</a></li>
+                <li><a href="./pages/authors.html" class="nav-link">Les auteurs</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <article class="meme-container">
+            <h1 class="meme-title">Meme le plus récent :</h1>
+            <img src="./meme/wordpress.png" alt="Meme du jour">
+            <p class="meme-description">
+                Ce meme montre quelle zone de la boite craniène est impacté lors de différent type de maux de tête ( migraine, hypertension ,stress) enfin, nous pouvons voir que wordpress lui s'attaque à l'entièreté de la boite craniène(c'est réel).
+            </p>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <p>MM(I)emes - copyright 2025 | <a href="./pages/légale.html">Mentions légales</a></p>
+    </footer>
+    <script>
+        const burgerMenu = document.querySelector('.burger-menu');
+        const nav = document.querySelector('.nav');
+        const overlay = document.querySelector('.overlay');
+
+        burgerMenu.addEventListener('click', () => {
+            burgerMenu.classList.toggle('active');
+            nav.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : 'auto';
+        });
+
+        overlay.addEventListener('click', () => {
+            burgerMenu.classList.remove('active');
+            nav.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Fermer le menu quand on clique sur un lien
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                burgerMenu.classList.remove('active');
+                nav.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+    </script>
+</body>
+</html>

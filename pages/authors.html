@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les auteurs - MM(I)emes</title>
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+    <header class="header">
+        <a href="../index.html" class="logo"><img src="../images/logo.png"></a>
+        <button class="burger-menu" aria-label="Menu">
+            <span class="burger-bar"></span>
+            <span class="burger-bar"></span>
+            <span class="burger-bar"></span>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a href="../index.html" class="nav-link">Accueil</a></li>
+                <li><a href="./about.html" class="nav-link">À propos</a></li>
+                <li><a href="./meme.html" class="nav-link">Les memes</a></li>
+            </ul>
+        </nav>
+        </button>
+        <div class="overlay"></div>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a href="../index.html" class="nav-link">Accueil</a></li>
+                <li><a href="./about.html" class="nav-link">À propos</a></li>
+                <li><a href="./meme.html" class="nav-link">Les memes</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main class="main">
+        <h1 class="page-title">Les fondateurs de MMIEMES</h1>
+        <div class="authors-grid">
+            <article class="author-card">
+                <img src="../images/micka.webp" alt="Photo de l'auteur 1" class="author-image">
+                <h2>Mickael</h2>
+                <p>Etudiant en 2ème année de MMI, Mickael est une personne assez decontratée, qui essaie de ne pas se prendre la tête et surtout, ne se prend pas au serieux. Il aime particulièrement rire mais avant tout faire rire les autres. MMI-meme est donc un projet qui rentre en parfaite aqéuation avec ses valeurs ainsi que son cursus universitaire.</p>
+            </article>
+            <!-- Répéter pour chaque auteur -->
+            <article class="author-card">
+                <img src="../images/victor.webp" alt="Photo de l'auteur 2" class="author-image">
+                <h2>Victor</h2>
+                <p>Etudiant en 2ème année de MMI, Victor se caractèrise par son second degrès et son auto-dérision. Très sociable et aimable, il noue très rapidement et facilement des liens avec les gens grâce notamment à sa manière unique de faire rire. MMI-meme est donc un projet qui rentre en parfaite aqéuation avec ses valeurs ainsi que son cursus universitaire. Passionné de memes et d'humour décalé, son humour ne vous laissera pas indifférent.</p>
+            </article>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>MM(I)emes - copyright 2025 | <a href="./légale.html">Mentions légales</a></p>
+    </footer>
+    <script>
+        const burgerMenu = document.querySelector('.burger-menu');
+        const nav = document.querySelector('.nav');
+        const overlay = document.querySelector('.overlay');
+
+        burgerMenu.addEventListener('click', () => {
+            burgerMenu.classList.toggle('active');
+            nav.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : 'auto';
+        });
+
+        overlay.addEventListener('click', () => {
+            burgerMenu.classList.remove('active');
+            nav.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Fermer le menu quand on clique sur un lien
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                burgerMenu.classList.remove('active');
+                nav.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+    </script>
+</body>
+</html>

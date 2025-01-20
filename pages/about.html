@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos - MM(I)emes</title>
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+    <header class="header">
+        <a href="../index.html" class="logo"><img src="../images/logo.png"></a>
+        <button class="burger-menu" aria-label="Menu">
+            <span class="burger-bar"></span>
+            <span class="burger-bar"></span>
+            <span class="burger-bar"></span>
+        
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a href="../index.html" class="nav-link">Accueil</a></li>
+                <li><a href="./meme.html" class="nav-link">Les memes</a></li>
+                <li><a href="./authors.html" class="nav-link">Les auteurs</a></li>
+            </ul>
+        </nav>
+        </button>
+        <div class="overlay"></div>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a href="../index.html" class="nav-link">Accueil</a></li>
+                <li><a href="./meme.html" class="nav-link">Les memes</a></li>
+                <li><a href="./authors.html" class="nav-link">Les auteurs</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <article class="about-content">
+            <h1 class="about-title">À propos de nous</h1>
+            
+            <section class="about-section">
+                <h2>Notre Mission</h2>
+                <p>MM(I)emes est né d'une volonté de créer un espace d'expression humoristique unique en son genre pour la communauté du département MMI de l'IUT d'Angoulême. </p> <p>Notre plateforme vise à :</p>
+                <ul>
+                    <li>Partager des moments de vie estudiantine de manière créative et amusante</li>
+                    <li>Créer du lien entre étudiants, enseignants et personnel administratif</li>
+                    <li>Valoriser la culture unique de notre IUT à travers l'humour</li>
+                    <li>Offrir un espace de détente et de divertissement respectueux</li>
+                </ul>
+            </section>
+
+            <section class="about-section">
+                <h2>Notre Système de Classification</h2>
+                <p>Chaque meme publié sur notre plateforme est soigneusement catégorisé selon :</p>
+                <ul>
+                    <li><strong>Catégories :</strong> Étudiant, Enseignant, Administratif</li>
+                    <li><strong>Force du meme :</strong> Échelle de 1 à 4 étoiles
+                        <ul>
+                            <li>⭐ : Sympathique</li>
+                            <li>⭐⭐ : Amusant</li>
+                            <li>⭐⭐⭐ : Très drôle</li>
+                            <li>⭐⭐⭐⭐ : Légendaire</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="about-section">
+                <h2>Notre Déontologie</h2>
+                <p>MM(I)emes s'engage à maintenir un environnement positif et respectueux à travers :</p>
+                <ul>
+                    <li><strong>Respect de la vie privée :</strong> Aucune information personnelle n'est partagée sans consentement explicite</li>
+                    <li><strong>Modération stricte :</strong> Chaque contenu est vérifié pour assurer qu'il respecte nos valeurs
+                        <ul>
+                            <li>Pas de contenu discriminatoire ou offensant</li>
+                            <li>Pas de harcèlement ou de moqueries ciblées</li>
+                            <li>Pas de contenu inapproprié ou Not Safe For Work (NSFW)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Humour bienveillant :</strong> Nous privilégions un humour qui rassemble plutôt que divise</li>
+                    <li><strong>Protection des données :</strong> Conformité stricte au RGPD et aux normes de protection des données</li>
+                </ul>
+            </section>
+
+            <section class="about-section">
+                <h2>Contribuer à MM(I)emes</h2>
+                <p>Vous souhaitez participer à l'aventure ? Voici comment :</p>
+                <ul>
+                    <li>Proposez vos propres memes via notre formulaire de soumission</li>
+                    <li>Partagez vos idées d'amélioration du site</li>
+                    <li>Signalez tout contenu inapproprié</li>
+                    <li>Faites connaître le site à vos camarades</li>
+                </ul>
+            </section>
+
+            <section class="about-section contact">
+                <h2>Nous Contacter</h2>
+                <p>Pour toute question, suggestion ou signalement, n'hésitez pas à nous contacter :</p>
+                <ul>
+                    <li>Email : contact.mmiemes@etu.univ-poitiers.fr</li>
+                    <li>Instagram : @mmiemes_off</li>
+                </ul>
+            </section>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <p>MM(I)emes - copyright 2025 | <a href="./légale.html">Mentions légales</a></p>
+    </footer>
+    <script>
+        const burgerMenu = document.querySelector('.burger-menu');
+        const nav = document.querySelector('.nav');
+        const overlay = document.querySelector('.overlay');
+
+        burgerMenu.addEventListener('click', () => {
+            burgerMenu.classList.toggle('active');
+            nav.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : 'auto';
+        });
+
+        overlay.addEventListener('click', () => {
+            burgerMenu.classList.remove('active');
+            nav.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Fermer le menu quand on clique sur un lien
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                burgerMenu.classList.remove('active');
+                nav.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+    </script>
+</body>
+</html>

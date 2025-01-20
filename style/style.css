@@ -1,0 +1,449 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styles généraux */
+:root {
+    --primary-color: rgb(110, 31, 175);
+    --secondary-color: #333;
+    --background-light: #f0f2f5;
+    --text-dark: #1a1a1a;
+    --spacing-unit: 1rem;
+    --breakpoint-mobile: 480px;
+    --breakpoint-tablet: 768px;
+    --breakpoint-desktop: 1024px;
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+}
+
+body {
+    font-family: 'Geneva', monospace;
+    line-height: 1.6;
+    background-color: #f0f2f5;
+}
+
+
+.header {
+    background: #ffffff;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    position: relative;
+}
+ /* Style menu berger*/
+
+ 
+        .burger-menu {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 20px;
+            background: transparent;
+            background-color: #ffffff;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 10;
+        }
+
+        .burger-bar {
+            width: 100%;
+            height: 4px;
+            background-color: #000000;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .nav {
+            margin-top: 0;
+        }
+
+        @media (max-width: 768px) {
+            .burger-menu {
+                display: flex;
+            }
+
+            .nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 250px;
+                height: 100vh;
+                background-color: rgb(110, 31, 175);
+                padding: 2rem;
+                transition: 0.3s ease-in-out;
+                box-shadow: -2px 0 5px rgba(238, 235, 235, 0.1);
+            }
+
+            a.nav-link{
+                color: rgb(255, 255, 255);
+            }
+
+            .nav.active {
+                right: 0;
+            }
+
+            .nav-list {
+                flex-direction: column;
+                margin-top: 4rem;
+            }
+
+            .nav-link {
+                display: block;
+                padding: 1rem 0;
+                font-size: 1.2rem;
+            }
+
+            /* Animation du burger */
+            .burger-menu.active .burger-bar:nth-child(1) {
+                transform: rotate(45deg) translate(6px, 6px);
+            }
+
+            .burger-menu.active .burger-bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .burger-menu.active .burger-bar:nth-child(3) {
+                transform: rotate(-45deg) translate(6px, -6px);
+            }
+
+            /* Overlay quand menu ouvert */
+            .overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                z-index: 5;
+            }
+
+            .overlay.active {
+                display: block;
+            }
+        }
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #1a1a1a;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.nav {
+    margin-top: 1rem;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.nav-link:hover {
+    background-color: #f0f0f0;
+    color: rgb(110, 31, 175);
+}
+
+.main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.meme-container {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.page-title{
+    color :rgb(110, 31, 175)
+
+
+}
+.meme-title {
+    margin-bottom: 1rem;
+    color: rgb(110, 31, 175);
+    
+}
+
+.meme-image {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    aspect-ratio: 3/2;
+    border-image: #000000;
+}
+
+.meme-image:hover {
+    transform: scale(2);
+    border-image: #000000;
+}
+
+.meme-description {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.meme-meta {
+    font-size: 0.9rem;
+    color: #888;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer {
+    background: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Grille de memes */
+.memes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 10rem;
+}
+
+/* Page Auteurs */
+.authors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 10rem;
+}
+
+.author-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.author-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    object-fit: cover;
+    border-color: #000000;
+}
+
+.author-image:hover {
+    transform: scale(1.3);
+    transition: transform 0.3s ease;
+}
+
+/* Page À propos  */
+.about-content {
+    background: #fff;
+    border-radius: 16px;
+    padding: 3rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+.about-title {
+    font-size: 2.5rem;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+    color: rgb(110, 31, 175);
+}
+
+.about-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background-color: #000000;
+    border-radius: 2px;
+}
+
+.about-section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about-section h2 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.about-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.about-section ul {
+    list-style: none;
+    padding-left: 1.5rem;
+}
+
+.about-section ul li {
+    margin-bottom: 1rem;
+    position: relative;
+    padding-left: 1.5rem;
+    line-height: 1.6;
+}
+
+.about-section ul li::before {
+    content: '•';
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -0.2rem;
+}
+
+.about-section ul li strong {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+/* Style spécial pour la section classification */
+.about-section ul li ul {
+    margin-top: 0.8rem;
+    margin-left: 1rem;
+}
+
+.about-section ul li ul li {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    color: #666;
+}
+
+/* Section contact */
+.contact {
+    background: linear-gradient(145deg, rgb(110, 31, 175) 65%, #000000 100%);
+    color: white;
+    padding: 2.5rem;
+}
+
+.contact h2,
+.contact p,
+.contact ul li,
+.contact ul li::before {
+    color: rgb(255, 255, 255);
+}
+
+.contact ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+/* Responsive PAGE about*/
+@media (max-width: 768px) {
+    .about-content {
+        padding: 1.5rem;
+    }
+
+    .about-section {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .about-title {
+        font-size: 2rem;
+    }
+
+    .about-section h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-content {
+        padding: 1rem;
+    }
+
+    .about-section {
+        padding: 1rem;
+    }
+
+    .about-title {
+        font-size: 1.8rem;
+    }
+
+    .about-section p {
+        font-size: 1rem;
+    }
+}
+
+/* PAGE Mentions légales */
+.legal-content {
+    background: #fff;
+    border-radius: 8px;
+    padding: 2rem;
+}
+
+/*Responsive */
+
+
+@media (max-width: 600px) {
+    .nav-list {
+        flex-direction: column;
+    }
+    
+    .authors-grid {
+        grid-template-columns: 1fr;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+}
