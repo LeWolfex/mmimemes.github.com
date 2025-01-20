@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentions légales</title>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            font-family: Montserrat;
+            line-height: 1.5;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        strong {
+            font-weight: bold;
+        }
+
+        a {
+            color: #0000FF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        br {
+            line-height: 1.5;
+        }
+        
+    </style>
+</head>
+
+<body style="width: 800px; margin: auto;">
+    <h1>Informations légales</h1>
+    
+    <p style="text-align:center">MENTIONS LÉGALES :</p>
+    
+    <p style="text-align:justify">En conformité aux dispositions  de l'article 6-III et 19 de la Loi numero 2004-575 du 21 juin 2004 pour la Confiance dans l'économie numérique, dite L.C.E.N., nous portons à la connaissance des utilisateurs du site les informations suivantes :</p>
+    <br />
+    <p style="text-align:justify"><strong>1. Informations légales :</strong></p>
+
+        
+    <p style="text-align:justify">Propriétaires : <strong>KECLARD Mickael et BEAU Victor</strong><br />
+    Adresse de localisation des titulaires : <strong>16000 - Angoulême</strong><br />
+    <br />
+    Les fabriquants du site suivant sont : <strong>KECLARD Mickael et BEAU Victor</strong><br />
+    Les directeurs de la publication : <strong>KECLARD Mickael et BEAU Victor</strong><br />
+    Pour contacter les décideurs de la publication : <strong>mickael.keclard@etu.univ-potiers.fr ou victor.beau@etu.univ-poitiers.fr</strong><br />
+    <br />
+    Les concepteur et développeurs sont : <strong>KECLARD Mickael et BEAU Victor</strong><br />
+    Pour contacter les développeurs : <strong>mickael.keclard@etu.univ-potiers.fr ou victor.beau@etu.univ-poitiers.fr</strong><br />
+    <br />
+
+    
+    <p style="text-align:justify"></p>
+    <br />
+    <p style="text-align:justify"><strong>2. Introduction :</strong></p>
+    
+    <p style="text-align:justify">Tout internaute qui se connecte et utilise le site internet est considéré comme usagé du site web.<br />
+    
+    <p style="text-align:justify"></p>
+    <br />
+    <p style="text-align:justify"><strong>3. Exigence d'accessibilité :</strong><br />
+    <br />
+    Le site internet est habituellement accessible aux usagés H24 7/7, excepté en cas d'interruption, programmée ou non, pour les besoins de la maintenance ou en cas de force majeure. N'étant subordonné qu'à une obligation de moyen, mickael keclard ne saurait être designé comme responsable des dommages, peu importe sa nature, résultant d'une indisponibilité du service</p>
+    
+    <p style="text-align:justify"></p>
+    <br />
+    <p style="text-align:justify"><strong>4. Propriété intellectuelle :</strong><br />
+    <br />
+    KECLARD Mickael et BEAU Victor sont propriétaires unique de tous les droits de propriété intellectuelle ou détient les droits et autorisations d'usage sur tous les éléments accessibles sur le site, tant sur la structure que sur les articles et textes, graphismes, logo, sons, logiciels, etc…<br />
+    Toute reproduction même partielle du site, affichage, édition, mis à jour totale ou partielle de l'un quelconque de ces éléments, sans tenir compte du  moyen ou la technique utilisée, est strictement interdite, excepté autorisation préalable de KECLARD Mickael et BEAU Victor, propriétaires du site web à l'email : mickael.keclard@etu.univ-potiers.fr ou victor.beau@etu.univ-poitiers.fr, à défaut elle sera considérée de la même manière qu'une contrefaçon et passible de poursuite conformément aux dispositions des multiples articles L.335-2 et suivants du Code de Propriété Intellectuelle.</p>
+    
+    <p style="text-align:justify"><br />
+    
+    </body>
+
+    <script>
+        const burgerMenu = document.querySelector('.burger-menu');
+        const nav = document.querySelector('.nav');
+        const overlay = document.querySelector('.overlay');
+
+        burgerMenu.addEventListener('click', () => {
+            burgerMenu.classList.toggle('active');
+            nav.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : 'auto';
+        });
+
+        overlay.addEventListener('click', () => {
+            burgerMenu.classList.remove('active');
+            nav.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Fermer le menu quand on clique sur un lien
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                burgerMenu.classList.remove('active');
+                nav.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+    </script>
+
+</html>
+
+
+
+

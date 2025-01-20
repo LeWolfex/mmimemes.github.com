@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les memes - MM(I)emes</title>
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+    <header class="header">
+        <a href="../index.html" class="logo"><img src="../images/logo.png"></a>
+        <button class="burger-menu" aria-label="Menu">
+            <span class="burger-bar"></span>
+            <span class="burger-bar"></span>
+            <span class="burger-bar"></span>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a href="../index.html" class="nav-link">Accueil</a></li>
+                <li><a href="./about.html" class="nav-link">À propos</a></li>
+                <li><a href="./authors.html" class="nav-link">Les auteurs</a></li>
+            </ul>
+        </nav>
+        </button>
+        <div class="overlay"></div>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a href="../index.html" class="nav-link">Accueil</a></li>
+                <li><a href="./about.html" class="nav-link">À propos</a></li>
+                <li><a href="./authors.html" class="nav-link">Les auteurs</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <h1 class="page-title">Tous les memes</h1>
+        <div class="memes-grid">
+            <!-- Répéter ce bloc pour chaque meme -->
+            <article class="meme-container">
+                <h2 class="meme-title">ChatGPT</h2>
+                <img src="../meme/gpt.png" alt="Meme 1" class="meme-image">
+                <p class="meme-description"> Lorsque certains enseignants nous félicitent pour notre travail, il arrive parfois que nous soyons mal a l'aise car il s'agit en faite du travail de ChatGPT </p> 
+                <div class="meme-meta">
+                    <span>⭐⭐⭐</span>
+                    <span>Catégorie: Enseignant, Etudiant</span>
+                </div>
+            </article>
+            <!-- Exemple d'un deuxième meme -->
+            <article class="meme-container">
+                <h2 class="meme-title">Reveil</h2>
+                <img src="../meme/reveil.png" alt="Meme 2" class="meme-image">
+                <p class="meme-description"> Si nous avions le choix entre piocher 25 cartes au uno ou aller en cours, nous piocherons tous autant que nous sommes 25 cartes.</p> 
+                <div class="meme-meta">
+                    <span>⭐</span>
+                    <span>Catégorie: Etudiant</span>
+                </div>
+            </article>
+
+            <!-- Exemple d'un troisème meme -->
+            <article class="meme-container">
+                <h2 class="meme-title">Tu croyais que..mais non</h2>
+                <img src="../meme/tacru.png" alt="Meme 2" class="meme-image">
+                <p class="meme-description"> A chaque fois que nous pensons atteindre le bout du tunnel en rendant le dernier projet, un autre projet apprarait... comme par magie...</p> 
+                <div class="meme-meta">
+                    <span>⭐⭐</span>
+                    <span>Catégorie: Etudiant</span>
+                </div>
+            </article>
+
+            <!-- Exemple d'un quatrième meme -->
+            <article class="meme-container">
+                <h2 class="meme-title">Wordpress</h2>
+                <img src="../meme/wordpress.png" alt="Meme 2" class="meme-image">
+                <p class="meme-description"> Ce meme montre quelle zone de la boite craniène est impacté lors de différent type de maux de tête ( migraine, hypertension ,stress) enfin, nous pouvons voir que wordpress lui s'attaque à l'entièreté de la boite craniène(c'est réel).</p> 
+                <div class="meme-meta">
+                    <span>⭐⭐⭐⭐</span>
+                    <span>Catégorie: Etudiant</span>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>MM(I)emes - copyright 2025 | <a href="./légale.html">Mentions légales</a></p>
+    </footer>
+    <script>
+        const burgerMenu = document.querySelector('.burger-menu');
+        const nav = document.querySelector('.nav');
+        const overlay = document.querySelector('.overlay');
+
+        burgerMenu.addEventListener('click', () => {
+            burgerMenu.classList.toggle('active');
+            nav.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : 'auto';
+        });
+
+        overlay.addEventListener('click', () => {
+            burgerMenu.classList.remove('active');
+            nav.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Fermer le menu quand on clique sur un lien
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                burgerMenu.classList.remove('active');
+                nav.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+    </script>
+</body>
+</html>
